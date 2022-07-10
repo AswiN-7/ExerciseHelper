@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/index-style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" /> -->
+
+    <title>Exercise</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="left__nav">
+            <a class ="button" href="#">Home</a>
+        </div>
+        <div class="right__nav">
+            <span class="button" id="mode" >mode</span>
+        </div>
+    </div>
+
+    <section class="section contanier" id="cat-n-cow">
+        <h1 class="section__title">Cat N Cow</h1>
+        <span class="section__subtitle">Exercise</span>
+        <div class="items">
+            <div class="input__content">
+                <label for="" class="input__label">Rounds</label>
+                <input type="number" id="cat-rounds" class="input">
+            </div>
+            <div class="input__content">
+                <label for="" class="input__label">seconds</label>
+                <input type="number" class="input" id="cat-time" >
+            </div>        
+    </div>
+
+        <p class="button" id="cat-calculate-time">calculate</p>
+        <p class="required-time" id="cat-required-time">00:00</p>
+        <p class="button" id="cat-start-exercise">Start</p>
+
+        <div class="cat__display" id="cat-display">
+            <!-- <div class="cat__display_ele1" id="cat-progress-bar"></div> -->
+            <div class="cat__display_ele2">
+            <p class="cat__round" id="cat-round-diaplay">1</p>
+            <p class="cat__direction" id="cat-direction"></p>
+            </div>
+            <p class="cat__time" id="cat-display-time">00:00</p>
+        </div>
+    </section>
+    <!-- <h1>this is h1</h1> -->
+    <script src="assets/js/index-script.js"></script>
+</body>
+</html>

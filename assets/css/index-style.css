@@ -1,0 +1,221 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,900&display=swap'); */
+/*==================== BASE ====================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+image{
+    max-width: 100%;
+    height: auto;
+}
+
+:root{
+    --primary-bg:rgb(255, 255, 255);
+
+    --primary-color: rgb(30, 30, 30);
+    --secondary-color: rgb(108, 108, 108);
+    --tertiary-color: rgb(214, 214, 214);
+    --content-color: rgb(31, 31, 31);
+
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margins Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+
+
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+body{
+    background-color: var(--primary-bg);
+    color:var(--primary-color);
+}
+
+/* ==========================> mode <========================= */
+.dark-mode{
+    --primary-bg:rgb(29, 30, 32);
+
+    --primary-color: rgb(218, 218, 219);
+    --secondary-color: rgb(155, 156, 157);
+    --tertiary-color: rgb(65, 66, 68);
+    --content-color: rgb(196, 196, 197);
+}
+/* ==========================> NAV <========================= */
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.left__nav{
+    display: flex;
+    flex-direction: row;
+
+}
+/* ==========================> SECTION <========================= */
+.section{
+    padding: 2rem 0 4rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.section__title{
+    font-size: var(--h1-font-size);
+    text-align: center;
+
+}
+
+.section__subtitle{
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-0-25);
+    text-align: center;    
+}
+
+.items{
+    display: flex;
+    width: 100%;
+    padding: 2%;
+    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+.button{
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border-radius: 88% 12% 87% 13% / 22% 78% 22% 78%; 
+    padding: 3px;
+}
+/* ==========================> input <========================= */
+.input__content{
+    
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    padding: .75rem 1rem .25rem;
+    align-items: center;
+}
+.input__label{
+    width: 30%;
+    font-size: var(--smaller-font-size);
+}
+.input{
+    width: 100%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    border-radius: 14% 86% 13% 87% / 69% 36% 64% 31% ; 
+   
+    border: none;
+    outline: none;
+    width: 40%;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+}
+
+.required-time{
+    text-align: center;
+    font-weight: var(--font-medium);
+}
+.cat__display{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.cat__direction{
+    width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 24px solid var(--primary-color);
+}
+.rotate__180{
+    transform: rotate(180deg);
+
+}
+.cat__display_ele1{
+    border-radius: 40px;
+    background-color: var(--primary-color);
+    height: 20px;
+    width: 100%;
+}
+.cat__display_ele2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+
+}
+.cat__round{
+}
+.cat__time{
+    font-size: 100px;
+    text-align: center;
+}
