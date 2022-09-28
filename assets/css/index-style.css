@@ -16,12 +16,14 @@ body{
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1,h2,h3,h4{
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
-
 }
 
 ul{
@@ -32,11 +34,13 @@ a{
     text-decoration: none;
 }
 
-image{
-    max-width: 100%;
-    height: auto;
+img{
+    height: 50%;
+    width: 100%;
 }
-
+p{
+    text-align: center;
+}
 :root{
     --primary-bg:rgb(255, 255, 255);
 
@@ -73,7 +77,7 @@ image{
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
 
-
+    --screen-size : 90%;
 
 }
 
@@ -86,6 +90,7 @@ image{
         --normal-font-size: 1rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
+        --screen-size : 768px;
     }
 }
 
@@ -105,18 +110,25 @@ body{
 }
 /* ==========================> NAV <========================= */
 .nav{
+    margin-top: 20px;
+    width: var(--screen-size);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    /* position: sticky; */
+    /* top :10px; */
 }
-.left__nav{
+.left__nav {
+    width: 70%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 
 }
 /* ==========================> SECTION <========================= */
 .section{
-    padding: 2rem 0 4rem;
+    max-width: 768px;
+    padding: 2rem 1rem 4rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -124,7 +136,7 @@ body{
 .section__title{
     font-size: var(--h1-font-size);
     text-align: center;
-
+    /* margin-bottom: 40px; */
 }
 
 .section__subtitle{
@@ -132,6 +144,7 @@ body{
     margin-bottom: var(--mb-0-25);
     text-align: center;    
 }
+
 
 .items{
     display: flex;
@@ -148,6 +161,20 @@ body{
     color: var(--tertiary-color);
     border-radius: 88% 12% 87% 13% / 22% 78% 22% 78%; 
     padding: 3px;
+}
+/* .container{
+
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+} */
+
+/* ==========================> Motto <========================= */
+.moto__body{
+    text-align: center;
+}
+.moto__body>p, .possible__exercises>p, .exe__bud>p{
+    margin-top: 5%;
 }
 /* ==========================> input <========================= */
 .input__content{
@@ -184,12 +211,12 @@ body{
     text-align: center;
     font-weight: var(--font-medium);
 }
-.cat__display{
+.dodo__display, .dorest__display{
     width: 80%;
     display: flex;
     flex-direction: column;
 }
-.cat__direction{
+.dodo__direction{
     width: 0;
 	height: 0;
 	border-left: 12px solid transparent;
@@ -198,24 +225,45 @@ body{
 }
 .rotate__180{
     transform: rotate(180deg);
-
 }
-.cat__display_ele1{
+.dodo__display_ele1, .dorest__display_ele1{
     border-radius: 40px;
     background-color: var(--primary-color);
     height: 20px;
     width: 100%;
 }
-.cat__display_ele2{
+.dodo__display_ele2, .dorest__display_ele2{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 40px;
 
 }
-.cat__round{
-}
-.cat__time{
+
+.dodo__time, .dorest__time{
     font-size: 100px;
     text-align: center;
+}
+
+.dodo__stop, .dorest__stop{
+    padding: 6px;
+    text-align: center;
+}
+
+.dorest>.items>.input__content>input{
+    width:80%;
+}
+
+.dorest__direction{
+    height: 50px;
+	width: 10px;
+    background-color: var(--primary-color);
+}
+
+.rotate__90{
+    rotate: 90deg;
+}
+
+.hide{
+    display:none;
 }

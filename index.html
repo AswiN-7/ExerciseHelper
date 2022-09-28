@@ -1,52 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/index-style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" /> -->
-
     <title>Exercise</title>
 </head>
+
 <body>
     <div class="nav">
         <div class="left__nav">
-            <a class ="button" href="#">Home</a>
+            <a class="button" href="#exe-bud">Exe-buD</a>
+            <a href="#motto" class="button">MottO</a>
+            <a href="#possible-exercises" class="button">Possible exe</a>
         </div>
         <div class="right__nav">
-            <span class="button" id="mode" >mode</span>
+            <span class="button mode" id="mode">mode</span>
         </div>
     </div>
+    <section class="section motto" id="motto">
+        <p class="section__title"> Motto</p>
 
-    <section class="section contanier" id="cat-n-cow">
-        <h1 class="section__title">Cat N Cow</h1>
+        <div class="moto__body">
+            <img src="assets/images/ele-man-push.jpg" alt="ele-man-push image">
+            <p>It is not because the man could push the elephant on the truck but because of his hands on its back,
+                Elephant will feel confident that there is someone to support US and pull itself into the truck
+                successfully
+                A simple act of motivation </p>
+            <p>We all have the thought of doing exercises for maintaining for health. Many will start doing exercises
+                for 3 4days and drop it for no reason and again came to the normal regretting life, Some won't start
+                this exercise things. </p>
+            <p>Like the above though the man can't push, he give confidence to push the elephant by itself. Here you
+                have Exercise buddy(ExeBud). ExeBud will assist and motivate you to exercises in regular manner. </p>
+
+        </div>
+
+    </section>
+    <section class="section contanier exe__bud" id="exe-bud">
+        <p class="section__title"> Intro</p>
+        <p>Here the main focus is on Time Balancing Exercises(TBE).</p>
+        <p>this exercises helps us to train equaly, equaly means doing some exercise in left hand for 2minutes have to
+            do same exercise in right hand for 2minutes</p>
+        <p>TBEs</p>
+        <div>
+            <li>cat N Cow</li>
+            <li>Side-Lying Rotations</li>
+            <li>Twist holds</li>
+            <li>bridges</li>
+            <li>Plank</li>
+        </div>
+    </section>
+
+    <section class="section container possible__exercises" id="possible-exercises">
+        <p class="section__title">Possible Exercises</p>
+        <h2>1. Do, Do, Do, Do...</h2>
+        <p>1 Round => 1 set(exercise, exercise)</p>
+        <p> Do => how many seconds want to do exercise</p>
+        <p>Calculate button will display total time required to finish </p>
+        <a href="#dodo">start</a>
+        <h2>2. Do, Rest, Do, Rest....</h2>
+        <p>1 Round => 1 set(exercise, relax)</p>
+        <p> Do => how many seconds want to do exercise</p>
+        <p> Rest => how many seconds want to Relax</p>
+        <a href="#do-rest">start</a>
+        
+    </section>
+
+    <section class="section contanier" id="dodo">
+        <h1 class="section__title">DoDo.. </h1>
+        <span class="section__subtitle">Exercise</span>
+        <div class="items" >
+            <div class="input__content">
+                <label for="" class="input__label">Rounds</label>
+                <input type="number" id="dodo-rounds" class="input">
+            </div>
+            <div class="input__content">
+                <label for="" class="input__label">Do</label>
+                <input type="number" class="input" id="dodo-time">
+            </div>
+        </div>
+
+        <p class="button" id="dodo-calculate-time">calculate</p>
+        <p class="required-time" id="dodo-required-time">00:00</p>
+        <p class="button" id="dodo-start-exercise">Start</p>
+
+        <div class="dodo__display" id="dodo-display">
+            <!-- <div class="dodo__display_ele1" id="dodo-progress-bar"></div> -->
+            <div class="dodo__display_ele2">
+                <p class="dodo__round" id="dodo-round-diaplay">1</p>
+                <p class="dodo__direction" id="dodo-direction"></p>
+            </div>
+            <p class="dodo__time" id="dodo-display-time">00:00</p>
+        </div>
+        <p id="dodo-stop" class="dodo__stop button">Stop</p>
+
+    </section>
+
+    <section class="section contanier dorest" id="do-rest">
+        <h1 class="section__title">DoRest.. </h1>
         <span class="section__subtitle">Exercise</span>
         <div class="items">
             <div class="input__content">
                 <label for="" class="input__label">Rounds</label>
-                <input type="number" id="cat-rounds" class="input">
+                <input type="number" id="do-rest-rounds" class="input">
             </div>
             <div class="input__content">
-                <label for="" class="input__label">seconds</label>
-                <input type="number" class="input" id="cat-time" >
-            </div>        
-    </div>
-
-        <p class="button" id="cat-calculate-time">calculate</p>
-        <p class="required-time" id="cat-required-time">00:00</p>
-        <p class="button" id="cat-start-exercise">Start</p>
-
-        <div class="cat__display" id="cat-display">
-            <!-- <div class="cat__display_ele1" id="cat-progress-bar"></div> -->
-            <div class="cat__display_ele2">
-            <p class="cat__round" id="cat-round-diaplay">1</p>
-            <p class="cat__direction" id="cat-direction"></p>
+                <label for="" class="input__label">Do</label>
+                <input type="number" class="input" id="dorest-do-time">
             </div>
-            <p class="cat__time" id="cat-display-time">00:00</p>
+            <div class="input__content">
+                <label for="" class="input__label">Rest</label>
+                <input type="number" class="input" id="dorest-rest-time">
+            </div>
         </div>
+
+        <p class="button" id="dorest-calculate-time">calculate</p>
+        <p class="required-time" id="dorest-required-time">00:00</p>
+        <p class="button" id="dorest-start-exercise">Start</p>
+
+        <div class="dorest__display" id="dorest-display">
+            <!-- <div class="dodo__display_ele1" id="dodo-progress-bar"></div> -->
+            <div class="dorest__display_ele2">
+                <p class="dorest__round" id="dorest-round-diaplay">1</p>
+                <p class="dorest__direction" id="dorest-direction"></p>
+            </div>
+            <p class="dorest__time" id="dorest-display-time">00:00</p>
+        </div>
+        <p id="dorest-stop" class="dorest__stop button">Stop</p>
+
     </section>
-    <!-- <h1>this is h1</h1> -->
+
     <script src="assets/js/index-script.js"></script>
 </body>
+
 </html>
