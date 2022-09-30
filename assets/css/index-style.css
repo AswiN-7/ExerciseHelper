@@ -161,6 +161,7 @@ body{
     color: var(--tertiary-color);
     border-radius: 88% 12% 87% 13% / 22% 78% 22% 78%; 
     padding: 3px;
+    cursor: pointer;
 }
 /* .container{
 

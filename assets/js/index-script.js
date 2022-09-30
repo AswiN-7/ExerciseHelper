@@ -24,6 +24,7 @@ function isScreenLockSupported() {
 }
 async function getScreenLock() {
     if (isScreenLockSupported()) {
+        alert("wake lock is present");
         let screenLock;
         try {
             screenLock = await navigator.wakeLock.request('screen');
@@ -31,6 +32,9 @@ async function getScreenLock() {
             console.log(err.name, err.message);
         }
         return screenLock;
+    }
+    else{
+        alert("wake lock is not present");
     }
 }
 
@@ -97,6 +101,7 @@ async function startdodo() {
         screenLock = await getScreenLock();
         Doing = 1;
         Stop = 0;
+        play("step");
         for (let currentRound = 1; currentRound <= DoDoRounds; currentRound++) {
             DoDoRoundsDisplay.innerText = currentRound;
             for (let s = 1; s <= dodoTime; s++) {
@@ -108,7 +113,7 @@ async function startdodo() {
                 }
                 await new Promise(done => setTimeout(() => done(), 1000));
             }
-            play();
+            play("step");
             dodoDirectionDisplay.classList.toggle('rotate__180');
             // play sound
             console.log("play sound");
@@ -121,7 +126,7 @@ async function startdodo() {
                 dodoTimeDisplay.innerText = s;
                 await new Promise(done => setTimeout(() => done(), 1000));
             }
-            play();
+            play("step");
             // play sound
             console.log("play sound");
             dodoDirectionDisplay.classList.toggle('rotate__180');
@@ -132,8 +137,15 @@ async function startdodo() {
 }
 
 
-function play() {
-    audioUrl = String.raw`assets\audio\pinwheel.mp3`
+function play(audio) {
+    audioUrlPin = String.raw`assets\audio\pinwheel.mp3`;
+    audioUrlStep = String.raw`assets\audio\step.wav`;
+
+    audioUrl = null
+    if(audio == 'pin')
+        audioUrl = audioUrlPin
+    else
+        audioUrl = audioUrlStep
     var audio = new Audio(audioUrl);
     audio.play();
 }
@@ -188,6 +200,7 @@ async function startDoRest() {
         screenLock = await getScreenLock();
         Doing = 1;
         Stop = 0;
+        play("step");
         for (let currentRound = 1; currentRound <= doRestRounds; currentRound++) {
             doRestRoundsDisplay.innerText = currentRound;
             for (let s = 1; s <= doRestDo; s++) {
@@ -199,7 +212,7 @@ async function startDoRest() {
                 }
                 await new Promise(done => setTimeout(() => done(), 1000));
             }
-            play();
+            play("pin");
             doRestDirectionDisplay.classList.toggle('rotate__90');
             // play sound
             console.log("play sound");
@@ -212,7 +225,7 @@ async function startDoRest() {
                 doRestTimeDisplay.innerText = s;
                 await new Promise(done => setTimeout(() => done(), 1000));
             }
-            play();
+            play("step");
             // play sound
             console.log("play sound");
             doRestDirectionDisplay.classList.toggle('rotate__90');
