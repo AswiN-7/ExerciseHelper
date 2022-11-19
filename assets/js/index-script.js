@@ -18,23 +18,28 @@ function toggleMode() {
 }
 // ====================> Screen lock <===============================
 let screenLock = null;
+let wakeElement = document.getElementById("wakelockapi")
 
 function isScreenLockSupported() {
     return ('wakeLock' in navigator);
 }
 async function getScreenLock() {
     if (isScreenLockSupported()) {
-        alert("wake lock is present");
+        // alert("wake lock is present");
+        wakeElement.textContent = "wake present"
         let screenLock;
         try {
             screenLock = await navigator.wakeLock.request('screen');
+            wakeElement.textContent = "wake is active"
+
         } catch (err) {
             console.log(err.name, err.message);
         }
         return screenLock;
     }
     else{
-        alert("wake lock is not present");
+        wakeElement.textContent = "wake not present"
+        // alert("wake lock is not present");
     }
 }
 
@@ -47,7 +52,7 @@ function release() {
             });
     }
 }
-
+getScreenLock()
 
 // ====================> dodo <===============================
 var DoDoRoundsElement = document.getElementById('dodo-rounds');
