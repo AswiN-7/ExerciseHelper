@@ -26,11 +26,11 @@ function isScreenLockSupported() {
 async function getScreenLock() {
     if (isScreenLockSupported()) {
         // alert("wake lock is present");
-        wakeElement.textContent = "wake present"
+        // wakeElement.textContent = "wake present"
         let screenLock;
         try {
             screenLock = await navigator.wakeLock.request('screen');
-            wakeElement.textContent = "wake is active"
+            // wakeElement.textContent = "wake is active"
 
         } catch (err) {
             console.log(err.name, err.message);
@@ -38,7 +38,7 @@ async function getScreenLock() {
         return screenLock;
     }
     else{
-        wakeElement.textContent = "wake not present"
+        wakeElement.textContent = "screen may automatically trun off due to battery server"
         // alert("wake lock is not present");
     }
 }
@@ -134,21 +134,27 @@ async function startdodo() {
             play("step");
             // play sound
             console.log("play sound");
-            dodoDirectionDisplay.classList.toggle('rotate__180');
-            Doing = 0;
-            release();
+            dodoDirectionDisplay.classList.toggle('rotate__180');   
         }
+        play("stageClear")
+        Doing = 0;
+        release();
     }
 }
 
+audioUrlPin = String.raw`assets\audio\pinwheel.mp3`;
+audioUrlStep = String.raw`assets\audio\step.wav`;
+audioUrlStageClear = String.raw`assets\audio\stage_clear.wav`
+audioUrlUp = String.raw`assets\audio\\up.wav`;
 
-function play(audio) {
-    audioUrlPin = String.raw`assets\audio\pinwheel.mp3`;
-    audioUrlStep = String.raw`assets\audio\step.wav`;
-
+function play(audio) {    
     audioUrl = null
     if(audio == 'pin')
         audioUrl = audioUrlPin
+    else if(audio == 'up')
+        audioUrl = audioUrlUp
+    else if(audio == 'stageClear')
+        audioUrl = audioUrlStageClear
     else
         audioUrl = audioUrlStep
     var audio = new Audio(audioUrl);
@@ -217,7 +223,7 @@ async function startDoRest() {
                 }
                 await new Promise(done => setTimeout(() => done(), 1000));
             }
-            play("pin");
+            play("up");
             doRestDirectionDisplay.classList.toggle('rotate__90');
             // play sound
             console.log("play sound");
@@ -234,9 +240,10 @@ async function startDoRest() {
             // play sound
             console.log("play sound");
             doRestDirectionDisplay.classList.toggle('rotate__90');
-            Doing = 0;
-            release();
         }
+        Doing = 0;
+        play("stageClear");
+        release();
     }
 }
 
